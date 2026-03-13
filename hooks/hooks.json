@@ -1,0 +1,38 @@
+{
+  "description": "Rolling Reality compaction protection and session reminders",
+  "hooks": {
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/pre-compact-checkpoint.sh",
+            "statusMessage": "Saving pre-compaction checkpoint..."
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/post-compact-context.sh",
+            "statusMessage": "Restoring post-compaction context..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/reality-reminder.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

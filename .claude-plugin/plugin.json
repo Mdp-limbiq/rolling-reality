@@ -1,0 +1,19 @@
+{
+  "name": "rolling-reality",
+  "description": "Cross-session memory for Claude Code. Never lose context after compaction or between sessions.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Mariano Di Pietrantonio",
+    "url": "https://github.com/marianomdo"
+  },
+  "repository": "https://github.com/marianomdo/rolling-reality",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "context",
+    "compaction",
+    "session",
+    "continuity",
+    "persistence"
+  ]
+}
